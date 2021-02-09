@@ -1,13 +1,11 @@
 /*
 #!/usr/bin/env gorun
-# _author_ li_binbin1@dahuatech.com
+# _author_ li_binbin1@gmail.com
 */
 
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func bigNumberAdd(bignumA string, bignumB string) string {
 	A_len := len(bignumA)
