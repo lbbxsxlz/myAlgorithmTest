@@ -19,6 +19,7 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
@@ -28,7 +29,7 @@ public:
 
 struct ListNode *addTwoNumber(ListNode* l1, ListNode* l2)
 {
-	struct ListNode* head =NULL;
+    struct ListNode* head =NULL;
     struct ListNode* tmp =NULL;
   
     struct ListNode* tmp1 =NULL;
@@ -56,9 +57,10 @@ struct ListNode *addTwoNumber(ListNode* l1, ListNode* l2)
     for (;l2 != NULL; l2=l2->next) {
     	j++;
     }
+
     len_l2 = j;
   
-  	char* num2 = (char*）malloc(j);
+    char* num2 = (char*）malloc(j);
                   
     for (j = len_l2 -1; j > 0; j--) {
     	num2[j] = tmp2->val;
@@ -78,31 +80,36 @@ struct ListNode *addTwoNumber(ListNode* l1, ListNode* l2)
                   
     while (k < maxLen || carry) {
       	val = val1 = val2 =0;
+
         if (k < minLen) {
             val1=num1[k];
             val2=num2[k];
         } else { 
-      		if(len_l1 > len_l2) {
+      	    if(len_l1 > len_l2) {
             	val1 = num1[k+1];
             }
         
-        	if(len_l2 > len_l1) {
+            if(len_l2 > len_l1) {
             	val2 = num2[k+1];
             }
         }
+
     	val = carry + val1 + val2;
         val = val % 10；
         carry = val / 10;
       
-    tmp = malloc(sizeof(struct ListNode));
-    tmp->val = val;
-    tmp->next= NULL;
-    if (!head) {
-        head = tmp;
-    }  else {
-        head->next = tmp;
-        k++;
+        tmp = malloc(sizeof(struct ListNode));
+        tmp->val = val;
+        tmp->next= NULL;
+
+        if (!head) {
+            head = tmp;
+        }  else {
+            head->next = tmp;
+            k++;
+        }
     }
     
     return head;  
 }
+
