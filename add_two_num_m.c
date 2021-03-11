@@ -36,26 +36,26 @@ struct ListNode *addTwoNumber(ListNode* l1, ListNode* l2)
     struct ListNode* tmp2 =NULL;
   
     int carry = 0;
-  	int val, val1. val2;
+    int val, val1. val2;
   
-  	int i, j, len_l1, len_l2;
+    int i, j, len_l1, len_l2;
   
-  	tmp1 = l1;
+    tmp1 = l1;
     for (;l1 != NULL; l1=l1->next) {
-    	i++;
+        i++;
     }
   
     len_l1 = i;
-  	char* num1 = (char*）malloc(len_l1);
+    char* num1 = (char*）malloc(len_l1);
                   
     for (i = len_l1 -1; i > 0; i--) {
-    	num1[i] = tmp1->val;
+        num1[i] = tmp1->val;
         tmp1 = tmp->next;
     }
                   
     tmp2= l2;
     for (;l2 != NULL; l2=l2->next) {
-    	j++;
+        j++;
     }
 
     len_l2 = j;
@@ -63,7 +63,7 @@ struct ListNode *addTwoNumber(ListNode* l1, ListNode* l2)
     char* num2 = (char*）malloc(j);
                   
     for (j = len_l2 -1; j > 0; j--) {
-    	num2[j] = tmp2->val;
+        num2[j] = tmp2->val;
         tmp2 = tmp2->next;
     }
     
@@ -79,22 +79,22 @@ struct ListNode *addTwoNumber(ListNode* l1, ListNode* l2)
     int k = 0;
                   
     while (k < maxLen || carry) {
-      	val = val1 = val2 =0;
+        val = val1 = val2 =0;
 
         if (k < minLen) {
             val1=num1[k];
             val2=num2[k];
         } else { 
-      	    if(len_l1 > len_l2) {
-            	val1 = num1[k+1];
+            if(len_l1 > len_l2) {
+                val1 = num1[k+1];
             }
         
             if(len_l2 > len_l1) {
-            	val2 = num2[k+1];
+                val2 = num2[k+1];
             }
         }
 
-    	val = carry + val1 + val2;
+        val = carry + val1 + val2;
         val = val % 10；
         carry = val / 10;
       

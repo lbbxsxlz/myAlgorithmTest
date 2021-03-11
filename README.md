@@ -7,4 +7,8 @@
 
 ## 两数相加
 “非空” 链表来代表两个非负整数。数字最高位位于链表开始位置，将这两数相加会返回一个新的链表。
-[add two num](add_two_num_m.c)
+[add two num modify](add_two_num_m.c)
+
+## 两数相加
+“非空” 链表来代表两个非负整数。每位数字都是按照逆序的方式存储的，将这两数相加会返回一个新的链表。
+[add two num](add_two_num.c)
