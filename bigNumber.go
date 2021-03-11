@@ -5,7 +5,9 @@
 
 package main
 
-import "fmt"
+import ("fmt"
+	"os"
+	)
 
 func bigNumberAdd(bignumA string, bignumB string) string {
 	A_len := len(bignumA)
@@ -18,7 +20,7 @@ func bigNumberAdd(bignumA string, bignumB string) string {
 		maxlen = B_len
 	}
 
-	arrayA := make([]int, A_len + 1)
+	arrayA := make([]int, maxlen + 1)
 	for i := 0; i < A_len; i++ {
 		arrayA[i] = int(bignumA[A_len -1 -i] - '0')
 	}
@@ -28,7 +30,7 @@ func bigNumberAdd(bignumA string, bignumB string) string {
 	}
 	fmt.Printf("\n")
 */
-	arrayB := make([]int, B_len + 1)
+	arrayB := make([]int, maxlen + 1)
 	for i := 0; i < B_len; i++ {
 		arrayB[i] = int(bignumB[B_len-1-i] - '0')
 	}
@@ -45,7 +47,7 @@ func bigNumberAdd(bignumA string, bignumB string) string {
 		temp += arrayA[i]
 		temp += arrayB[i]
 
-		if temp > 10 {
+		if temp >= 10 {
 			temp = temp - 10
 			result[i+1] = 1
 		}
@@ -73,5 +75,6 @@ func bigNumberAdd(bignumA string, bignumB string) string {
 }
 
 func main() {
-	fmt.Println(bigNumberAdd("3234456", "8561456"))
+	//fmt.Println(bigNumberAdd("3234456", "8561456"))
+	fmt.Println(bigNumberAdd(os.Args[1], os.Args[2]))
 }
